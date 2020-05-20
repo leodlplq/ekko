@@ -9,6 +9,13 @@
     <title>Ekko - Web Agency</title>
 </head>
 <body>
+    <div class="left"></div>
+    <div class="right">
+        <div class="menu"></div>
+        
+    </div>
+
+
     
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>

@@ -2,6 +2,7 @@
   "requires": true,
   "lockfileVersion": 1,
   "dependencies": {
+    "gif-player-jquery": "^0.2.2",
     "jquery": "^3.5.1",
     "modern-normalize": "^0.6.0"
   },

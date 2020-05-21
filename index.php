@@ -8,21 +8,138 @@
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="assets/style/master.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="assets/images/icon.png">
     <title>Ekko - Web Agency</title>
 </head>
-<body>
-    <div class="left">
+<body id="accueil">
+<div class="responsive">
+    <span>Désolé, le site n'est pas encore disponible en responsive !</span>
+</div>
+<div class="loading">
+  <div>
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+    <div class="c4"></div>
+  </div>
+  <span>loading</span>
+</div>
+    <div class="left" >
         <div class="title">Nous sommes</div>
 
         <img class="mockup" src="assets/images/mockup.png" alt="Mock up">
+        <div class="groupe">
 
+        <div class="header">
+
+        </div>
+
+            <div class="runes">
+                <img src="assets/images/rune.png" alt="rune">
+            </div>
+            <a href="#" class="logoTop"><img src="assets/images/logo.svg" alt="Logo de Ekko"></a>
+            <div class="menu">
+                <a class="link_menu accueilbutton">Accueil</a>
+                <a href="#projet" class="link_menu projectbutton">Nos projets</a>
+                <a href="#equipe" class="link_menu">L'équipe</a>
+                <a href="#contact" class="link_menu">Contact</a>
+            </div>
+
+        
+            <div class="etudiants" id="equipe">
+                <div class="case">
+                    <div><img src="assets/images/photo.png" alt="photo"></div>
+                    <h1>Denis</h1>
+                    <span>Dévelloppeur et chef de projet</span>
+                </div>
+                <div class="case">
+                    <div><img src="assets/images/photo.png" alt="photo"></div>
+                    <h1>Juliette</h1>
+                    <span>Communicant</span>
+                </div>
+                <div class="case">
+                    <div><img src="assets/images/photo.png" alt="photo"></div>
+                    <h1>Tomy</h1>
+                    <span>Communicant</span>
+                </div>
+                <div class="case">
+                    <div><img src="assets/images/photo.png" alt="photo"></div>
+                    <h1>Victor</h1>
+                    <span>Graphiste</span>
+                </div>
+                <div class="case">
+                    <div><img src="assets/images/photo.png" alt="photo"></div>
+                    <h1>Mélanie</h1>
+                    <span>Communicant</span>
+                </div>
+                <div class="case">
+                    <div><img src="assets/images/photo.png" alt="photo"></div>
+                    <h1>Léo</h1>
+                    <span>Dévelloppeur</span>
+                </div> 
+            </div>
+
+            <div class="contact" id="contact">
+                <div class="white">
+
+                <div class="formcontact">
+            <form action="" method="POST" class="formcontactform">
+                <div class="txtb">
+                    <input type="text" class="" name="name" value="" required>
+                    <span data-placeholder="Prénom & Nom"></span>
+                </div>
+                <div class="txtb">
+                    <input type="email" class="" name="email" value="" required>
+                    <span data-placeholder="Mail"></span>
+                </div>
+                <div class="txtb">
+                    <textarea type="text" class="message_input" name="message" value="" required></textarea>
+                    <span data-placeholder="Message"></span>
+                </div>
+
+                <input type="submit" value="envoyer" class="btn_mail">
+            </form>
+            <?php
+            if (isset($_POST['message'])) {
+                $position_arobase = strpos($_POST['email'], '@');
+                if ($position_arobase === false)
+                    echo '<p>Votre email doit comporter un arobase.</p>';
+                else {
+                    $retour = mail('delplanqueleomail@gmail.com', 'Envoi depuis la page Contact', $_POST['message'], 'From: '.$POST['name'].' '. $_POST['email']);
+                    if($retour)
+                        echo '<p>Votre message a été envoyé.</p>';
+                    else
+                        echo '<p>Erreur.</p>';
+                }
+            }
+            ?>
+        </div>
+                </div>
+                <div class="yellow">
+                    <div class="infos2 scrolled">
+                        <div class="logo">
+                            <img src="assets/images/logo.svg" alt="Logo de Ekko">
+                        </div>
+                        <div class="baseline">Avec nous faites rayonner vos projets.</div>
+                        <a href="#" class="btn">
+                        INSCRIVEZ-VOUS A LA NEWSLETTER
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
     </div>
     <div class="right">
+
+    <a href="#" class="logoTop"><img src="assets/images/logo.svg" alt="Logo de Ekko"></a>
         <div class="menu">
-            <a href="#" class="link_menu">Accueil</a>
-            <a href="#" class="link_menu">Nos projets</a>
-            <a href="#" class="link_menu">L'équipe</a>
-            <a href="#" class="link_menu">Contact</a>
+            <a class="link_menu accueilbutton">Accueil</a>
+            <a href="#projet" class="link_menu projectbutton">Nos projets</a>
+            <a href="#equipe" class="link_menu">L'équipe</a>
+            <a href="#contact" class="link_menu">Contact</a>
         </div>
 
         <div class="runes">
@@ -38,7 +155,7 @@
                 Un projet ?
             </a>
         </div>
-        <div class="caroussel">
+        <div class="caroussel" id="projet">
             <div class="glide">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
